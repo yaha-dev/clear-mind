@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
 import Menu from 'components/Menu';
-import { Container } from 'styles';
+import { Container, GlobalStyles } from 'styles';
 
 import { routerList, routerKeys } from 'utils/routes';
 import { INIT_LOCALE } from 'utils/constants';
@@ -29,6 +29,8 @@ function App() {
             <ThemeContext.Provider value={{ theme, setTheme }}>
                 <ThemeProvider theme={theme}>
                     <BrowserRouter>
+                        <GlobalStyles />
+
                         <Container>
                             <Menu />
 
