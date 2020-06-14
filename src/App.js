@@ -1,24 +1,36 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
 
 import Menu from 'components/Menu';
+import { Container, GlobalStyles } from 'styles';
 
-import { Container } from 'utils/styles';
-import { routerList, routerKeys } from 'utils/routing';
-import { themes, ThemeContext } from 'utils/themes';
+import { routerList, routerKeys } from 'utils/routes';
+import { INIT_LOCALE, INIT_THEME } from 'utils/constants';
+
+import { ThemeContext } from 'utils/theme';
+import i18n, { LocaleContext } from 'locale/i18n';
 
 function App() {
-    const [theme, setTheme] = useState(themes.light);
+    const [theme, toggleTheme] = useState(INIT_THEME);
+    const [locale, toggleLocale] = useState(INIT_LOCALE);
 
-    const toggleTheme = () => {
-        setTheme(theme === themes.light ? themes.dark : themes.light);
+    const setTheme = () => {
+        const nextTheme = theme === 'light' ? 'dark' : 'light';
+        localStorage.setItem('theme', nextTheme);
+        toggleTheme(nextTheme);
+    };
+    const setLocale = () => {
+        const lng = locale === 'en' ? 'ru' : 'en';
+        i18n.changeLanguage(lng);
+        toggleLocale(lng);
     };
 
     return (
-        <ThemeContext.Provider value={{ theme, toggleTheme }}>
-            <ThemeProvider theme={theme}>
+        <LocaleContext.Provider value={{ locale, setLocale }}>
+            <ThemeContext.Provider value={{ theme, setTheme }}>
                 <BrowserRouter>
+                    <GlobalStyles theme={theme} />
+
                     <Container>
                         <Menu />
 
@@ -37,8 +49,8 @@ function App() {
                         </Switch>
                     </Container>
                 </BrowserRouter>
-            </ThemeProvider>
-        </ThemeContext.Provider>
+            </ThemeContext.Provider>
+        </LocaleContext.Provider>
     );
 }
 
