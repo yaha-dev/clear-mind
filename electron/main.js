@@ -6,8 +6,8 @@ let mainWindow;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        minWidth: 515,
+        minHeight: 550,
         show: false,
     });
     const startURL = isDev

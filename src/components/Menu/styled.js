@@ -5,13 +5,13 @@ export const MenuStyled = styled.nav`
     padding: 15px;
     min-width: 200px;
     height: 100vh;
+    background-color: var(--gray);
 
-    ${(props) =>
+    /* ${(props) =>
         props.theme &&
         css`
-            background: ${props.theme.foreground};
-            color: ${props.theme.background};
-        `}
+            background: ${props.theme.neutral};
+        `} */
 `;
 
 export const MenuList = styled.ul`
@@ -22,9 +22,9 @@ export const MenuList = styled.ul`
 `;
 
 export const MenuLink = styled(NavLink)`
-    color: #fff;
+    color: #656c73;
     text-decoration: none;
     &.active {
-        color: red;
+        color: var(--accent);
     }
 `;

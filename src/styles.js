@@ -53,16 +53,27 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         font: normal 400 18px/22px 'Open Sans';
+
+        --background: #0e1724;
+        --light-background: #F4F5F7;
+        --bg-btn: #3B4455;
+        --text: #888993;
+        
+        --gray: #262E3B;
+        --accent: #ECC417;
+
+        ${(props) =>
+            props.theme === 'dark' &&
+            css`
+                --background: #fff;
+                --light-background: #262e3b;
+                --text: #fff;
+            `}
     }
 `;
 
 export const Container = styled.div`
     display: flex;
-
-    ${(props) =>
-        props.theme &&
-        css`
-            background: ${props.theme.background};
-            color: ${props.theme.foreground};
-        `}
+    background-color: var(--background);
+    color: var(--text);
 `;

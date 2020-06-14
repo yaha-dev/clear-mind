@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Button from 'components/Button';
 
 import { LocaleContext } from 'locale/i18n';
-import { ThemeContext } from 'utils/themes';
+import { ThemeContext } from 'utils/theme';
 
 export default class Settings extends Component {
     render() {
