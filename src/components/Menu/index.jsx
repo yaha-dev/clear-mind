@@ -1,9 +1,12 @@
 import React from 'react';
 import { MenuStyled, MenuList, MenuLink } from './styled';
+import { useTranslation } from 'react-i18next';
 
-import { routerList, routerKeys } from 'utils/routing';
+import { routerList, routerKeys } from 'utils/routes';
 
 function Menu(props) {
+    const { t } = useTranslation();
+
     return (
         <MenuStyled {...props}>
             <MenuList>
@@ -16,7 +19,7 @@ function Menu(props) {
                             activeClassName="active"
                             exact={route.path === '/'}
                         >
-                            {route.name}
+                            {t(route.name)}
                         </MenuLink>
                     );
                 })}
