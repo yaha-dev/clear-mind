@@ -2,6 +2,7 @@
     "translation": {
         "Timer": "Таймер",
         "Logs": "Логирование",
-        "Settings": "Настройки"
+        "Settings": "Настройки",
+        "version": "версия"
     }
 }
