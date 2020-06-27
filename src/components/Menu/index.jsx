@@ -1,6 +1,7 @@
 import React from 'react';
-import { MenuStyled, MenuList, MenuLink } from './styled';
+import { MenuStyled, MenuList, MenuLink, MenuIcon, MenuInfo } from './styled';
 import { useTranslation } from 'react-i18next';
+import { packageConf } from 'utils/constants';
 
 import { routerList, routerKeys } from 'utils/routes';
 
@@ -19,11 +20,14 @@ function Menu(props) {
                             activeClassName="active"
                             exact={route.path === '/'}
                         >
-                            {t(route.name)}
+                            <MenuIcon icon={route.icon} /> {t(route.name)}
                         </MenuLink>
                     );
                 })}
             </MenuList>
+            <MenuInfo>
+                {t('version')} {packageConf.version}
+            </MenuInfo>
         </MenuStyled>
     );
 }

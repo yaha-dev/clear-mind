@@ -16,17 +16,18 @@
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-i18next": "^11.5.1",
+        "react-icons": "^3.10.0",
         "react-router-dom": "^5.2.0",
         "react-scripts": "3.4.1",
         "styled-components": "^5.1.1",
         "wait-on": "^5.0.1"
     },
     "scripts": {
-        "dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\"",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
+        "estart": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\"",
         "ebuild": "npm run build && node_modules/.bin/build"
     },
     "eslintConfig": {
