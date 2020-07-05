@@ -1,9 +1,10 @@
 {
-    "name": "break_mind",
+    "name": "clear-mind",
     "version": "0.1.0",
     "private": false,
     "homepage": "./",
     "main": "./electron/main.js",
+    "license": "UNLICENSED",
     "dependencies": {
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.3.2",
