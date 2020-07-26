@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Btn } from './styled';
 
-function Button(props) {
+function Button(props: React.HTMLProps<HTMLButtonElement>) {
     return <Btn {...props} />;
 }
 
