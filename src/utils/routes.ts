@@ -1,10 +1,11 @@
+import { IRouter } from './types';
 import { IoIosTimer, IoIosList, IoIosSettings } from 'react-icons/io';
 
 import Timer from 'pages/Timer';
 import Logs from 'pages/TimerLogs';
 import Settings from 'pages/Settings';
 
-export const routerList = {
+export const routerList: IRouter = {
     timer: {
         name: 'Timer',
         path: '/',

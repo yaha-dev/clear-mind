@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const MenuStyled = styled.nav`
@@ -9,12 +9,6 @@ export const MenuStyled = styled.nav`
     background-color: var(--gray);
     display: flex;
     flex-direction: column;
-
-    /* ${(props) =>
-        props.theme &&
-        css`
-            background: ${props.theme.neutral};
-        `} */
 `;
 
 export const MenuList = styled.ul`

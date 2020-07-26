@@ -5,7 +5,7 @@ import { packageConf } from 'utils/constants';
 
 import { routerList, routerKeys } from 'utils/routes';
 
-function Menu(props) {
+function Menu(props: React.HTMLProps<HTMLDivElement>) {
     const { t } = useTranslation();
 
     return (

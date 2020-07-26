@@ -6,6 +6,7 @@ import { INIT_LOCALE, IS_DEV } from 'utils/constants';
 
 import en from './translations/en.json';
 import ru from './translations/ru.json';
+import { IContextI18n } from './types';
 
 i18n.use(initReactI18next).init({
     resources: { en, ru },
@@ -19,7 +20,7 @@ i18n.use(initReactI18next).init({
 export const LocaleContext = React.createContext({
     locale: INIT_LOCALE,
     setLocale: () => {},
-});
+}) as React.Context<IContextI18n>;
 
 LocaleContext.displayName = 'LocaleContext';
 
